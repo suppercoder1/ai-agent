@@ -13,13 +13,11 @@ struct VoiceAgentApp: App {
     }
 
     var body: some Scene {
-        WindowGroup {
+        WindowGroup("Agent Chats") {
             ContentView(model: model)
-                .frame(minWidth: 620, minHeight: 560)
                 .onAppear {
                     NSApplication.shared.activate(ignoringOtherApps: true)
                 }
         }
-        .windowResizability(.contentSize)
     }
 }
